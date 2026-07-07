@@ -1,0 +1,203 @@
+/**
+ * Theme CSS - Dark mode, brand colors, and transitions
+ */
+
+/* ============================================================
+   Dark mode overrides
+   ============================================================ */
+.dark .kpi-card {
+  background: #1a2744;
+  border-color: #2d3f5c;
+}
+
+.dark .exec-card {
+  background: #0a1f38;
+}
+
+.dark .wfp-table thead th {
+  background: #0a1f38;
+}
+
+.dark .wfp-table tbody td {
+  border-color: #1f2d44;
+}
+
+.dark .wfp-table tbody tr:hover {
+  background: #1a2744;
+}
+
+.dark .scenario-card {
+  background: #1a2744;
+  border-color: #2d3f5c;
+}
+
+.dark .scenario-card.active {
+  background: #0f3d6b;
+  border-color: #0b4d8c;
+}
+
+.dark .org-cell {
+  background: #1a2744;
+  border-color: #2d3f5c;
+}
+
+.dark .stub-card {
+  background: #1a2744;
+  border-color: #2d3f5c;
+}
+
+.dark .waterfall-item {
+  background: #1a2744;
+  border-color: #2d3f5c;
+}
+
+.dark .waterfall-item.highlight {
+  background: #0f3d6b;
+  border-color: #0f3d6b;
+}
+
+.dark .stub-card h2,
+.dark .stub-card p {
+  color: #e2e8f0;
+}
+
+.dark .stub-card .stub-desc {
+  color: #94a3b8;
+}
+
+.dark .chart-box {
+  background: #1a2744;
+  border-color: #2d3f5c;
+}
+
+/* ============================================================
+   Brand color utilities
+   ============================================================ */
+.text-\[\#0b2c52\] {
+  color: #0b2c52;
+}
+
+.text-\[\#0b4d8c\] {
+  color: #0b4d8c;
+}
+
+.text-\[\#0d7a4f\] {
+  color: #0d7a4f;
+}
+
+.text-\[\#128a4b\] {
+  color: #128a4b;
+}
+
+.text-\[\#7c3aed\] {
+  color: #7c3aed;
+}
+
+.text-\[\#9a6b00\] {
+  color: #9a6b00;
+}
+
+.text-\[\#b3261e\] {
+  color: #b3261e;
+}
+
+.text-\[\#e8720c\] {
+  color: #e8720c;
+}
+
+.text-\[\#f2a900\] {
+  color: #f2a900;
+}
+
+.bg-\[\#0b2c52\] {
+  background-color: #0b2c52;
+}
+
+.bg-\[\#0b4d8c\] {
+  background-color: #0b4d8c;
+}
+
+.bg-\[\#128a4b\] {
+  background-color: #128a4b;
+}
+
+.bg-\[\#7c3aed\] {
+  background-color: #7c3aed;
+}
+
+.bg-\[\#b3261e\] {
+  background-color: #b3261e;
+}
+
+.bg-\[\#e8720c\] {
+  background-color: #e8720c;
+}
+
+.bg-\[\#f2a900\] {
+  background-color: #f2a900;
+}
+
+.border-\[\#0b4d8c\] {
+  border-color: #0b4d8c;
+}
+
+.border-\[\#0d7a4f\] {
+  border-color: #0d7a4f;
+}
+
+.border-\[\#128a4b\] {
+  border-color: #128a4b;
+}
+
+.border-\[\#7c3aed\] {
+  border-color: #7c3aed;
+}
+
+.border-\[\#b3261e\] {
+  border-color: #b3261e;
+}
+
+.border-\[\#e8720c\] {
+  border-color: #e8720c;
+}
+
+.border-\[\#f2a900\] {
+  border-color: #f2a900;
+}
+
+/* ============================================================
+   Font display
+   ============================================================ */
+.font-display {
+  font-family: 'Manrope', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ============================================================
+   Sidebar styling
+   ============================================================ */
+#sidebar {
+  background-color: #0b2c52;
+}
+
+/* ============================================================
+   Brand accent bar
+   ============================================================ */
+#brandAccentBar {
+  background-color: #0b4d8c;
+  transition: background-color 0.3s ease;
+}
+
+/* ============================================================
+   Takealot logo
+   ============================================================ */
+.takealot-logo-light {
+  filter: brightness(0) invert(1);
+}
+
+.takealot-logo-dark {
+  filter: none;
+}
