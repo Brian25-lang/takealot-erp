@@ -10,7 +10,7 @@ const API_URL = "https://script.google.com/a/macros/takealot.com/s/AKfycbwlM6n1Q
  * @param {object} params - Optional parameters to pass to the function
  * @returns {Promise<object>} - JSON response from the server
  */
-async function apiFetch(action, params = {}) {
+export async function apiFetch(action, params = {}) {
   const res = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
