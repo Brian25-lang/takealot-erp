@@ -2,7 +2,8 @@
  * API Module - All backend fetch calls
  * Replace YOUR_APPS_SCRIPT_WEB_APP_URL_HERE with your actual Apps Script Web App URL
  */
-const API_URL = "YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+const API_URL = "https://script.google.com/a/macros/takealot.com/s/AKfycbwlM6n1QAGEqORUD8A6uvhIDwYBpKk-KERJ0CroXXU8oTAd5LiSBT7ZDxDJUGwrD9M/exec
+";
 
 /**
  * Unified fetch wrapper for Apps Script backend
