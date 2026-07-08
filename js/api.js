@@ -6,17 +6,41 @@ const API_URL = "https://script.google.com/a/macros/takealot.com/s/AKfycbwlM6n1Q
 
 /**
  * Unified fetch wrapper for Apps Script backend
+ *
+ * Uses GET instead of POST to avoid CORS preflight. Apps Script doGet() is far more
+ * CORS-friendly than doPost() — a GET with no custom headers is a "simple request"
+ * per MDN CORS spec, so no preflight is sent and Google does not block it with 401/403.
+ *
  * @param {string} action - The server-side function name to call
  * @param {object} params - Optional parameters to pass to the function
  * @returns {Promise<object>} - JSON response from the server
  */
 export async function apiFetch(action, params = {}) {
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "text/plain;charset=utf-8" },
-    body: JSON.stringify({ action, ...params })
+  // Encode action + params as JSON in a URL query param; this is a simple request,
+  // so no CORS preflight is triggered (no custom headers, no Content-Type).
+  const payload = encodeURIComponent(JSON.stringify({ action, ...params }));
+  const url = `${API_URL}?payload=${payload}&nocache=${Date.now()}`;
+
+  const res = await fetch(url, {
+    method: "GET",
+    mode: "cors",
+    credentials: "same-origin"
   });
-  if (!res.ok) throw new Error(`API error ${res.status}`);
+
+  if (!res.ok) {
+    throw new Error(`API error ${res.status}`);
+  }
+
+  // Apps Script sometimes returns an HTML login redirect when the session is not
+  // authenticated. Detect this and give the user a clear action to take.
+  const contentType = res.headers.get("content-type") || "";
+  if (!contentType.includes("application/json")) {
+    throw new Error(
+      "API authentication required — open the Apps Script URL directly in your browser, "
+      + "sign in to the takealot.com Google Workspace account, then retry."
+    );
+  }
+
   return res.json();
 }
 
